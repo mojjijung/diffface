@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style2.css" />
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+            crossorigin="anonymous"
+        />
+
+        <title>Hello, world!</title>
+
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <script
+            type="text/javascript"
+            src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60608858e6bcf0fb"
+        ></script>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light nav-distance">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">둘 중 누가 더 잘생겼어요?</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
+                                >Disabled</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="section">
+            <h1 class="title">인공지능 잘생김 대결</h1>
+            <h2 class="subtitle">둘 중 누가 상타취임?</h2>
+        </section>
+
+        <section class="youtube">
+            <div class="container youtube-cover d-flex flex-row-reverse bd-highlight">
+                <img src="img/youtube-copy.jpg" alt="" class="youtube-icon" /><a
+                    href=""
+                    class="youtube-link"
+                    >쿠니의게임</a
+                >
+            </div>
+        </section>
+
+        <section class="d-flex justify-content-center">
+            <!-- 아직 구현안함 -->
+            <p class="d-flex align-items-center pr-3">여자</p>
+            <div>
+                <input type="checkbox" id="gender" />
+                <label for="gender">
+                    <span class="knob">
+                        <i></i>
+                    </span>
+                </label>
+            </div>
+            <p class="d-flex align-items-center pl-3">남자</p>
+        </section>
+
+        <script
+            class="jsbin"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+        ></script>
+        <div class="row-test">
+            <!-- 첫번째 이미지 업로드 -->
+            <div class="file-upload">
+                <div class="image-upload-wrap">
+                    <input
+                        class="file-upload-input"
+                        type="file"
+                        onchange="readURL(this);"
+                        accept="image/*"
+                    />
+                    <div class="drag-text">
+                        <img src="img/upload.svg" class="mt-5 pt-5 upload" style="width: 20%;" />
+                        <h3 class="mb-5 pb-5 pt-2 upload-text">
+                            얼굴 사진을 올려놓거나 눌러서 업로드하세요!
+                        </h3>
+                    </div>
+                </div>
+                <div class="file-upload-content">
+                    <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+
+                    <div class="image-title-wrap">
+                        <button type="button" onclick="removeUpload()" class="remove-image">
+                            삭제 <span class="image-title">첫번째 사진</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="label-container" id="label-container"></div>
+            </div>
+
+            <!-- 2번째 업로드 -->
+            <div class="file-upload">
+                <div class="image-upload-wrap2">
+                    <input
+                        class="file-upload-input2"
+                        type="file"
+                        onchange="readURL2(this);"
+                        accept="image/*"
+                    />
+                    <div class="drag-text2">
+                        <img src="img/upload.svg" class="mt-5 pt-5 upload2" style="width: 20%;" />
+                        <h3 class="mb-5 pb-5 pt-2 upload-text2">
+                            얼굴 사진을 올려놓거나 눌러서 업로드하세요!
+                        </h3>
+                    </div>
+                </div>
+                <div class="file-upload-content2">
+                    <img class="file-upload-image2" id="face-image2" src="#" alt="your image" />
+
+                    <div class="image-title-wrap2">
+                        <button type="button" onclick="removeUpload2()" class="remove-image2">
+                            삭제 <span class="image-title2">두번째 사진</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="label-container2" id="label-container2"></div>
+            </div>
+        </div>
+        <div id="webcam-container"></div>
+
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <div class="addthis_inline_share_toolbox"></div>
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+            (function () {
+                // DON'T EDIT BELOW THIS LINE
+                var d = document,
+                    s = d.createElement('script');
+                s.src = 'https://mojjijung.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript
+            >Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+            integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+            integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+        <script>
+            var diff_first = -1;
+            var diff_sec = -1;
+
+            // 첫번째 사진 업로드 시
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.image-upload-wrap').hide();
+
+                        $('.file-upload-image').attr('src', e.target.result);
+                        $('.file-upload-content').show();
+
+                        //$('.image-title').html(input.files[0].name);
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                    init().then(() => {
+                        predict();
+                    });
+                } else {
+                    removeUpload();
+                }
+            }
+
+            // 2번째 파일 업로드시
+            function readURL2(input) {
+                //alert("다시 들어오지 않나?");
+                //첫번째 사진을 먼저 업로드했는지 체크하자
+                if (diff_first < 0) {
+                    alert('왼쪽 사진부터 업로드해주세요~');
+                    return false;
+                }
+
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.image-upload-wrap2').hide();
+
+                        $('.file-upload-image2').attr('src', e.target.result);
+                        $('.file-upload-content2').show();
+
+                        //$('.image-title2').html(input.files[0].name);
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                    init2().then(() => {
+                        predict2();
+                    });
+                } else {
+                    removeUpload2();
+                }
+            }
+
+            function removeUpload() {
+                $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+                $('.file-upload-content').hide();
+                $('.image-upload-wrap').show();
+                $('.label-container').hide();
+
+                //사진 삭제를 하면 변수 초기화
+                diff_first = -1;
+            }
+            $('.image-upload-wrap').bind('dragover', function () {
+                $('.image-upload-wrap').addClass('image-dropping');
+            });
+            $('.image-upload-wrap').bind('dragleave', function () {
+                $('.image-upload-wrap').removeClass('image-dropping');
+            });
+
+            function removeUpload2() {
+                $('.file-upload-input2').replaceWith($('.file-upload-input2').clone());
+                $('.file-upload-content2').hide();
+                $('.image-upload-wrap2').show();
+                $('.label-container2').hide();
+
+                //사진 삭제를 하면 변수 초기화
+                diff_sec = -1;
+            }
+            $('.image-upload-wrap2').bind('dragover', function () {
+                $('.image-upload-wrap2').addClass('image-dropping2');
+            });
+            $('.image-upload-wrap2').bind('dragleave', function () {
+                $('.image-upload-wrap2').removeClass('image-dropping2');
+            });
+        </script>
+        <script type="text/javascript">
+            // More API functions here:
+            // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+            // the link to your model provided by Teachable Machine export panel
+            const URL = 'https://teachablemachine.withgoogle.com/models/CA73Om2Nr/';
+
+            let model, webcam, labelContainer, maxPredictions;
+
+            // Load the image model and setup the webcam
+            async function init() {
+                const modelURL = URL + 'model.json';
+                const metadataURL = URL + 'metadata.json';
+
+                // load the model and metadata
+                // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+                // or files from your local hard drive
+                // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+                model = await tmImage.load(modelURL, metadataURL);
+                maxPredictions = model.getTotalClasses();
+
+                // append elements to the DOM
+                labelContainer = document.getElementById('label-container');
+                for (let i = 0; i < maxPredictions; i++) {
+                    // and class labels
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+            }
+
+            async function init2() {
+                const modelURL = URL + 'model.json';
+                const metadataURL = URL + 'metadata.json';
+
+                // load the model and metadata
+                // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+                // or files from your local hard drive
+                // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+                model = await tmImage.load(modelURL, metadataURL);
+                maxPredictions = model.getTotalClasses();
+
+                // append elements to the DOM
+                labelContainer = document.getElementById('label-container2');
+                for (let i = 0; i < maxPredictions; i++) {
+                    // and class labels
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+            }
+
+            // run the webcam image through the image model
+            async function predict() {
+                // predict can take in an image, video or canvas html element
+                // 이미지 변수를 가져온다.
+                var image = document.getElementById('face-image');
+                const prediction = await model.predict(image, false);
+                prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+                var resultMessage;
+                switch (prediction[0].className) {
+                    case 'handsome':
+                        resultMessage = '잘생김';
+                        // code block
+                        break;
+                    case 'ugly':
+                        resultMessage = '못생김';
+                        // code block
+                        break;
+                    case 'animal':
+                        resultMessage = '낫휴먼';
+                        // code block
+                        break;
+                    default:
+                        resultMessage = '알수없음';
+                    // code block
+                }
+                //resul-Message Class안에 값을 넣는다.
+                $('.result-Message').html(resultMessage);
+                var barWidth;
+                for (let i = 0; i < maxPredictions; i++) {
+                    if (prediction[i].className == 'handsome') {
+                        diff_first = prediction[i].probability.toFixed(2) * 100;
+                    }
+
+                    if (prediction[i].probability.toFixed(2) > 0.1) {
+                        const classPrediction =
+                            prediction[i].className +
+                            ': ' +
+                            prediction[i].probability.toFixed(2) * 100 +
+                            '%';
+                        labelContainer.childNodes[i].innerHTML = classPrediction;
+
+                        barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + '%';
+                    } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+                        barWidth = '4%';
+                    } else {
+                        barWidth = '2%';
+                    }
+
+                    var labelTitle;
+                    switch (prediction[i].className) {
+                        case 'handsome':
+                            labelTitle = '잘생김';
+                            break;
+                        case 'ugly':
+                            labelTitle = '못생김';
+                            break;
+                        case 'animal':
+                            labelTitle = '낫휴먼';
+                            break;
+                        default:
+                            labelTitle = '알수없음';
+                    }
+                    var label =
+                        "<div class='animal-label d-flex align-items-center'>" +
+                        labelTitle +
+                        '</div>';
+                    var bar =
+                        "<div class='bar-container position-relative container'><div class='" +
+                        prediction[i].className +
+                        "-box'></div><div class='d-flex justify-content-center align-items-center " +
+                        prediction[i].className +
+                        "-bar' style='width: " +
+                        barWidth +
+                        "'><span class='d-block percent-text'>" +
+                        Math.round(prediction[i].probability.toFixed(2) * 100) +
+                        '%</span></div></div>';
+                    labelContainer.childNodes[i].innerHTML = label + bar;
+                }
+
+                $('.label-container').show();
+                // 여기서 버튼 활성화 시켜주는게 좋을듯
+            }
+
+            // run the webcam image through the image model
+            async function predict2() {
+                // predict can take in an image, video or canvas html element
+                // 이미지 변수를 가져온다.
+                var image = document.getElementById('face-image2');
+                const prediction = await model.predict(image, false);
+                prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+                var resultMessage;
+                switch (prediction[0].className) {
+                    case 'handsome':
+                        resultMessage = '잘생김';
+                        // code block
+                        break;
+                    case 'ugly':
+                        resultMessage = '못생김';
+                        // code block
+                        break;
+                    case 'animal':
+                        resultMessage = '낫휴먼';
+                        // code block
+                        break;
+                    default:
+                        resultMessage = '알수없음';
+                    // code block
+                }
+                //resul-Message Class안에 값을 넣는다.
+                $('.result-Message2').html(resultMessage);
+                var barWidth;
+                for (let i = 0; i < maxPredictions; i++) {
+                    if (prediction[i].className == 'handsome') {
+                        diff_sec = prediction[i].probability.toFixed(2) * 100;
+                    }
+
+                    if (prediction[i].probability.toFixed(2) > 0.1) {
+                        const classPrediction =
+                            prediction[i].className +
+                            ': ' +
+                            prediction[i].probability.toFixed(2) * 100 +
+                            '%';
+                        labelContainer.childNodes[i].innerHTML = classPrediction;
+
+                        barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + '%';
+                    } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+                        barWidth = '4%';
+                    } else {
+                        barWidth = '2%';
+                    }
+
+                    var labelTitle;
+                    switch (prediction[i].className) {
+                        case 'handsome':
+                            labelTitle = '잘생김';
+                            break;
+                        case 'ugly':
+                            labelTitle = '못생김';
+                            break;
+                        case 'animal':
+                            labelTitle = '낫휴먼';
+                            break;
+                        default:
+                            labelTitle = '알수없음';
+                    }
+                    var label =
+                        "<div class='animal-label d-flex align-items-center'>" +
+                        labelTitle +
+                        '</div>';
+                    var bar =
+                        "<div class='bar-container position-relative container'><div class='" +
+                        prediction[i].className +
+                        "-box'></div><div class='d-flex justify-content-center align-items-center " +
+                        prediction[i].className +
+                        "-bar' style='width: " +
+                        barWidth +
+                        "'><span class='d-block percent-text'>" +
+                        Math.round(prediction[i].probability.toFixed(2) * 100) +
+                        '%</span></div></div>';
+                    labelContainer.childNodes[i].innerHTML = label + bar;
+                }
+
+                $('.label-container2').show();
+
+                diff_face();
+            }
+
+            function showMessage(name, message) {
+                //alert(name+"께서 더 잘생겼네요.   "+ message);
+                //두 개의 차이에 대해서 구간을 나눠서 다르게 메세지를 뿌려주자
+                //0 ~ 20  : 도찐개진 그냥 둘다 막상막하
+                //21~ 40  : 그...그래도 왼쪽이 낫네요
+                //41~ 60  :
+                //61~ 80  :
+                //80~ 100 : 어디가서
+                if (message >= 0 && message < 21) {
+                    alert(
+                        name +
+                            ' 너! 그래 너 조금...아주 조금..개미손톱의 때만큼 낫다. 하 그냥 도찐개찐임'
+                    );
+                } else if (message >= 21 && message < 41) {
+                    alert(name + ' 너! 하..그래 그나마 니가좀 더 낫다. ');
+                } else if (message >= 41 && message < 61) {
+                    alert(name + ' 이 좀 더 잘생겼네 우리 할머니눈엔 그래~');
+                } else if (message >= 61 && message < 81) {
+                    alert(name + ' 이 존잘임 아 몰라 그냥 존잘임 어디가서 비교하지마!');
+                } else {
+                    alert(name + ' 은 신인가요.. 거의 왕과 하인수준의 미모차이네요!');
+                }
+            }
+
+            function diff_face() {
+                // 두명의 얼굴을 가지고 잘생김 비교해서 뿌려주기
+                // 전제 조건은 첫번째 사진을 먼저 올리고 두번째 사진 올리도록 유도
+
+                //alert("frist"+diff_first+"     "+"sec"+diff_sec + "  차이" + eval(diff_first-diff_sec));
+
+                // 차이를 변수로 만든다.
+                var message = parseInt(eval(diff_first - diff_sec));
+
+                if (eval(diff_first - diff_sec) >= 0) {
+                    //왼쪽이 더 잘생긴 경우
+                    var name = '왼쪽';
+                    showMessage(name, message);
+                } else {
+                    //오른쪽이 더 잘생긴 경우
+                    var name = '오른쪽';
+                    showMessage(name, message);
+                }
+            }
+        </script>
+    </body>
+
+    <!-- Copyright (c) 2021 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+--></html>
