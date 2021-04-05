@@ -96,7 +96,7 @@
 
             <p class="d-flex align-items-center pr-3">여자</p>
             <div>
-                <input type="checkbox" id="gender" />
+                <input type="checkbox" id="gender" onclick="gender_test();"/>
                 <label for="gender">
                     <span class="knob">
                         <i></i>
@@ -324,15 +324,43 @@
             // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
             // the link to your model provided by Teachable Machine export panel
-            const URL = 'https://teachablemachine.withgoogle.com/models/CA73Om2Nr/';
+            const urlMale = 'https://teachablemachine.withgoogle.com/models/CA73Om2Nr/';
 
+            // 여자 학습한거 들어가야한다.
+            const urlFemale = 'https://teachablemachine.withgoogle.com/models/CA73Om2Nr/';
+            
+            var URL;
+
+            //강제로 클릭해서 시작함
+            $("#gender").trigger("click");
+
+            
             let model, webcam, labelContainer, maxPredictions;
 
-            // 일단 남자만 되도록한다.
-            document.getElementById('gender').checked = true;
+            function gender_test(){
+                if (document.getElementById('gender').checked) {
+                    //alert("남자");
+                    URL = urlMale;
+                } else {
+                    //alert("여자");
+                    URL = urlFemale;
+                }
+
+            }
 
             // Load the image model and setup the webcam
             async function init() {
+                
+                /*
+                if (document.getElementById('gender').checked) {
+                    URL = urlMale;
+                } else {
+                    URL = urlFemale;
+                }
+                */
+
+                alert('test   ' + URL);
+
                 const modelURL = URL + 'model.json';
                 const metadataURL = URL + 'metadata.json';
 
@@ -352,6 +380,14 @@
             }
 
             async function init2() {
+                /*
+                if (document.getElementById('gender').checked) {
+                    URL = urlMale;
+                } else {
+                    URL = urlFemale;
+                }
+                */
+
                 const modelURL = URL + 'model.json';
                 const metadataURL = URL + 'metadata.json';
 
