@@ -96,7 +96,7 @@
 
             <p class="d-flex align-items-center pr-3">여자</p>
             <div>
-                <input type="checkbox" id="gender" onclick="gender_test();"/>
+                <input type="checkbox" id="gender" onclick="gender_test();" />
                 <label for="gender">
                     <span class="knob">
                         <i></i>
@@ -328,16 +328,15 @@
 
             // 여자 학습한거 들어가야한다.
             const urlFemale = 'https://teachablemachine.withgoogle.com/models/CA73Om2Nr/';
-            
+
             var URL;
 
             //강제로 클릭해서 시작함
-            $("#gender").trigger("click");
+            $('#gender').trigger('click');
 
-            
             let model, webcam, labelContainer, maxPredictions;
 
-            function gender_test(){
+            function gender_test() {
                 if (document.getElementById('gender').checked) {
                     //alert("남자");
                     URL = urlMale;
@@ -345,12 +344,10 @@
                     //alert("여자");
                     URL = urlFemale;
                 }
-
             }
 
             // Load the image model and setup the webcam
             async function init() {
-                
                 /*
                 if (document.getElementById('gender').checked) {
                     URL = urlMale;
@@ -619,6 +616,12 @@
         </script>
     </body>
 
+    <!-- git 명령어
+   1. git add. 
+   2. git commit -m "설명"
+   3. git push origin main 
+   4. id : mojjijung pw: 아들!!!
+-->
     <!-- Copyright (c) 2021 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
