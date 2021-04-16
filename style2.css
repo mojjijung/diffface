@@ -6,7 +6,7 @@ body {
 }
 
 .file-upload {
-        display: table-cell;
+    display: table-cell;
     width: 50%;
     border-radius: 10px;
     margin: 0 auto;
@@ -21,7 +21,6 @@ body {
     border: solid 1.5px #f6f7fa;
     background-color: #f6f7fa;
     width: 50%;
-  
 }
 
 .file-upload-btn {
@@ -52,13 +51,23 @@ body {
 }
 
 .file-upload-content {
-    display: none;
+    display: inline-block;
+    width: 90%;
+    height: auto;
+    /*display: none;*/
     text-align: center;
+    background-size: contain;
+    object-fit: cover;
 }
 
 .file-upload-content2 {
-    display: none;
+    display: inline-block;
+    width: 90%;
+    height: auto;
+    /*display: none;*/
     text-align: center;
+    background-size: contain;
+    object-fit: cover;
 }
 
 #loading {
@@ -94,12 +103,10 @@ body {
     border-radius: 10px;
     border: dashed 1.5px #35465d;
     background-color: #ffffff;
-   
 }
 
 .image-upload-wrap2 {
     margin: 0 auto;
-
     object-fit: contain;
     border-radius: 10px;
     border: dashed 1.5px #35465d;
@@ -119,15 +126,14 @@ body {
 }
 
 .image-title-wrap {
-    width:50%;
+    width: 50%;
     color: #222;
     position: static;
     margin: 0px auto;
-    
 }
 
 .image-title-wrap2 {
-     width:50%;
+    width: 50%;
     color: #222;
     position: static;
     margin: 0px auto;
@@ -152,15 +158,27 @@ body {
 }
 
 .file-upload-image {
+    /*
     max-height: 50%;
     max-width: 50%;
+    */
+    height: 50%;
+    width: 50%;
+    object-fit: cover;
+    object-position: top;
     margin: auto;
     padding: 10px;
 }
 
 .file-upload-image2 {
+    /*
     max-height: 50%;
     max-width: 50%;
+    */
+    height: 50%;
+    width: 50%;
+    object-fit: cover;
+    object-position: top;
     margin: auto;
     padding: 10px;
 }
@@ -191,7 +209,6 @@ body {
     transition: all 0.2s ease;
 }
 
-
 .remove-image2:hover {
     background: #c13b2a;
     color: #ffffff;
@@ -203,8 +220,6 @@ body {
     border: 0;
     transition: all 0.2s ease;
 }
-
-
 
 .navbar-light .navbar-brand {
     line-height: 1.68;
@@ -276,7 +291,6 @@ body {
     margin: 0 auto;
 }
 
-
 .upload2 {
     width: 20%;
 }
@@ -289,8 +303,6 @@ body {
     color: #35465d;
     margin: 0 auto;
 }
-
-
 
 .bar-container {
     height: 2.7rem;
@@ -380,7 +392,7 @@ body {
     border-radius: 10px;
     background-color: rgba(195, 140, 102, 1);
 }
-.fox-box {
+.special-box {
     position: absolute;
     top: 0;
     left: 0;
@@ -389,7 +401,7 @@ body {
     width: 100%;
     background-color: rgba(49, 132, 155, 0.2);
 }
-.fox-bar {
+.special-bar {
     position: absolute;
     top: 0;
     left: 0;
@@ -433,14 +445,14 @@ body {
 }
 
 .result-message {
-    width:50%;
-    position:static;
+    width: 50%;
+    position: static;
     font-size: 2rem;
 }
 
 .result-message2 {
-        width:50%;
-    position:static;
+    width: 50%;
+    position: static;
     font-size: 2rem;
 }
 
@@ -489,10 +501,10 @@ body {
     color: #9b6b43;
     font-size: 1.2rem;
 }
-.fox-animal-title {
+.special-animal-title {
     color: #31849b;
 }
-.fox-animal-celeb {
+.special-animal-celeb {
     color: #31849b;
     font-size: 1.2rem;
 }
@@ -588,15 +600,18 @@ input:checked + label > .knob > i:before {
 }
 
 .row-test {
-    width:100%;
+    width: 100%;
     display: table;
 }
 
-.addthis_inline_share_toolbox{
-  margin:0 auto;
-    margin-bottom : 30px;
+.addthis_inline_share_toolbox {
+    margin: 0 auto;
+    margin-bottom: 30px;
     margin-top: 30px;
-    text-align:center;
+    text-align: center;
 }
 
-.footer {margin:0 auto; text-align:center;}
+.footer {
+    margin: 0 auto;
+    text-align: center;
+}
