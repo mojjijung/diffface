@@ -136,6 +136,10 @@
                         </button>
                     </div>
                 </div>
+
+                <div class="loading" id="loading">
+                    <img src="img/loading.gif" />
+                </div>
                 <div class="label-container" id="label-container"></div>
             </div>
 
@@ -163,6 +167,9 @@
                             삭제 <span class="image-title2">두번째 사진</span>
                         </button>
                     </div>
+                </div>
+                <div class="loading2" id="loading2">
+                    <img src="img/loading.gif" />
                 </div>
                 <div class="label-container2" id="label-container2"></div>
             </div>
@@ -236,6 +243,8 @@
 
             // 첫번째 사진 업로드 시
             function readURL(input) {
+                $('.loading').show();
+
                 if (input.files && input.files[0]) {
                     var reader = new FileReader();
 
@@ -259,6 +268,7 @@
 
             // 2번째 파일 업로드시
             function readURL2(input) {
+                $('.loading2').show();
                 //alert("다시 들어오지 않나?");
                 //첫번째 사진을 먼저 업로드했는지 체크하자
                 if (diff_first < 0) {
@@ -307,6 +317,9 @@
                 $('.file-upload-input2').replaceWith($('.file-upload-input2').clone());
                 $('.file-upload-content2').hide();
                 $('.image-upload-wrap2').show();
+                //사진 밑에 문구들
+                // 여기에 loading bar
+
                 $('.label-container2').hide();
 
                 //사진 삭제를 하면 변수 초기화
@@ -332,11 +345,12 @@
 
             var URL;
 
+            $('.loading').hide();
+            $('.loading2').hide();
             //강제로 클릭해서 시작함
             $('#gender').trigger('click');
-            $(".file-upload-image").css("display", "none");
-            $(".file-upload-image2").css("display", "none");
-
+            $('.file-upload-image').css('display', 'none');
+            $('.file-upload-image2').css('display', 'none');
 
             let model, webcam, labelContainer, maxPredictions;
 
@@ -352,7 +366,7 @@
 
             // Load the image model and setup the webcam
             async function init() {
-                $(".file-upload-image").show();
+                $('.file-upload-image').show();
                 /*
                 if (document.getElementById('gender').checked) {
                     URL = urlMale;
@@ -380,7 +394,7 @@
             }
 
             async function init2() {
-                $(".file-upload-image2").show();
+                $('.file-upload-image2').show();
                 /*
                 if (document.getElementById('gender').checked) {
                     URL = urlMale;
@@ -493,6 +507,7 @@
                     labelContainer.childNodes[i].innerHTML = label + bar;
                 }
 
+                $('.loading').hide();
                 $('.label-container').show();
                 // 여기서 버튼 활성화 시켜주는게 좋을듯
             }
@@ -581,7 +596,7 @@
                         '%</span></div></div>';
                     labelContainer.childNodes[i].innerHTML = label + bar;
                 }
-
+                $('.loading2').hide();
                 $('.label-container2').show();
 
                 diff_face();
