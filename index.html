@@ -334,6 +334,9 @@
 
             //강제로 클릭해서 시작함
             $('#gender').trigger('click');
+            $(".file-upload-image").css("display", "none");
+            $(".file-upload-image2").css("display", "none");
+
 
             let model, webcam, labelContainer, maxPredictions;
 
@@ -349,6 +352,7 @@
 
             // Load the image model and setup the webcam
             async function init() {
+                $(".file-upload-image").show();
                 /*
                 if (document.getElementById('gender').checked) {
                     URL = urlMale;
@@ -376,6 +380,7 @@
             }
 
             async function init2() {
+                $(".file-upload-image2").show();
                 /*
                 if (document.getElementById('gender').checked) {
                     URL = urlMale;
