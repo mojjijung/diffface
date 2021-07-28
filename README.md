@@ -18,8 +18,8 @@ https://mojjijung.xyz/
 
 
 **사용된 소스**
-teachable machine
-bootstrap
+teachable machine,
+bootstrap,
 python
 
 
