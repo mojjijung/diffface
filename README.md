@@ -9,37 +9,20 @@
 			     🌩 𝘼𝙣𝙮𝙤𝙣𝙚 𝙘𝙖𝙣 𝙙𝙚𝙫𝙚𝙡𝙤𝙥!
 └───────────────────────────────────────────────┘
 ```
+**접속주소**
+https://mojjijung.xyz/
 
-# goormIDE
-Welcome to goormIDE!
-
-goormIDE is a powerful cloud IDE service to maximize productivity for developers and teams.  
-**DEVELOP WITH EXCELLENCE**  
-
-`Happy coding! The goormIDE team`
+**프로젝트 내용**
+인공지능으로 잘생긴사람/못생긴사람/사물등을 학습 시켜 
+두 사진을 비교해서 어떤사람이 더 잘생겼는지 보여주는 프로젝트
 
 
-## 🔧 Tip & Guide
+**사용된 소스**
+teachable machine
+bootstrap
+python
 
-* Command feature
-	* You can simply run your script using the shortcut icons on the top right.
-	* Check out `PROJECT > Common/Build/Run/Test/Find Command` in the top menu.
-	
-* Get URL and Port
-	* Click `PROJECT > URL/PORT` in top menu bar.
-	* You can get default URL/Port and add URL/Port in the top menu.
 
-* Useful shortcut
-	
-| Shortcuts name     | Command (Mac) | Command (Window) |
-| ------------------ | :-----------: | :--------------: |
-| Copy in Terminal   | ⌘ + C         | Ctrl + Shift + C |
-| Paste in Terminal  | ⌘ + V         | Ctrl + Shift + V |
-| Search File        | ⌥ + ⇧ + F     | Alt + Shift + F  |
-| Terminal Toggle    | ⌥ + ⇧ + B     | Alt + Shift + B  |
-| New Terminal       | ⌥ + ⇧ + T     | Alt + Shift + T  |
-| Code Formatting    | ⌥ + ⇧ + P     | Alt + Shift + P  |
-| Show All Shortcuts | ⌘ + H         | Ctrl + H         |
 
 ## 💬 Support & Documentation
 
